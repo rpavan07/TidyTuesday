@@ -1,12 +1,7 @@
 library(waffle)
 library(tidyverse)
-library(ggrepel)
+
 dfc <- read_csv("F:/Others/F1/champions.csv")
-
-dfc <- dfc%>%
-  select(Champions:Season) %>%
-  pivot_longer(-c(Champions)) 
-
 dfc$fill <- 1 
 
 theme_max <- function () {
