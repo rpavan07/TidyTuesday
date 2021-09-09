@@ -4,6 +4,7 @@ library(tidyverse)
 dfc <- read_csv("F:/Others/F1/champions.csv")
 dfc$fill <- 1 
 dfc$Champions <- str_trim(dfc$Champions)
+dfc$Champions <- factor(dfc$Champions, levels=levels(fct_infreq(dfc$Champions)))
 
 theme_max <- function () {
   theme_minimal(base_size = 9, base_family = "Consolas")%+replace%
